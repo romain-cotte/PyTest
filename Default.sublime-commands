@@ -5,6 +5,8 @@
                                   "args": {"target": "${file}"}},
     {"caption": "PyTest: Run: Test under cursor",
                             "command": "pytest_run_test_under_cursor"},
+    {"caption": "PyTest: Run: Copy under cursor",
+                            "command": "pytest_copy_test_under_cursor"},
     {"caption": "PyTest: --tb=short --ff", "command": "pytest_run",
                                     "args": {"options": "--tb=short --ff"}},
     {"caption": "PyTest: Deactivate for this project",
