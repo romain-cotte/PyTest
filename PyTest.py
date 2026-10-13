@@ -252,12 +252,17 @@ class PytestCopyTestUnderCursor(sublime_plugin.TextCommand):
             if test:
                 tests.append(test)
 
+        print(f"file = {file}")
         idx = file.rfind("/tests/")
 
         # The prefix command line could be a configuration
         s = "clear && pytest"
-        for test in tests:
-            s += f" {file[idx+1:]}::{test}"
+        if tests:
+            for test in tests:
+                s += f" {file[idx+1:]}::{test}"
+        else:
+            s += " " + file[idx+1:]
+
         copy_to_clipboard(s)
 
 
